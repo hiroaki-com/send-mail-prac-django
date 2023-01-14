@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+</head>
+<body>
+<header style="text-align:center;"><h1>Send Email From Django</h1></header>
+<hr>
+<div style="text-align: center;">
+<h4>Contact Client</h4>
+    <form method="POST" action="{% url 'index' %}">
+    {% csrf_token %}
+        <input type="text" name="name" placeholder="メールタイトル" required>
+        <br>
+        <br>
+        <input type="text" name="name" placeholder="Emailアドレス" required>
+        <br>
+        <br>
+        <textarea name="message" placeholder="メール本文" required></textarea>
+        <br>
+        <br>
+        <button class="btn btn-primary mt-2" type="submit">Send</button>
+        <br>
+        <br>
+    </form>
+</div>
+    
+</body>
+</html>
