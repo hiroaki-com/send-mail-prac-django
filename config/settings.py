@@ -15,9 +15,15 @@ env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #開発環境
 
-ALLOWED_HOSTS = []
+DEBUG = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 
 # Application definition
